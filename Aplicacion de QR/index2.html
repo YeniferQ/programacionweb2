@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR</title>
+    <link rel="stylesheet" href="estilis.css">
+</head>
+<body>
+    <div class="ingresarDatos">
+        <label for="">Nombre: </label>
+        <input type="text" id="input1" required maxlength="100" placeholder="Nombre">
+        
+        <label for="">Correo</label>
+        <input type="email" id="input2">
+        <br>
+        <label for="">Seleciona la institucion</label>
+        <input type="text" id="input3" list="institucionLista" required>
+            <datalist id="institucionLista">
+                <option value="FES Aragon">Facultad de estudios Superiores Aragon</option>
+                <option value="POLI">Politecnico</option>
+            </datalist>
+        
+        <label for="">Dependencia: </label>
+        <input type="text" name="" id="input4">
+        <br>
+    </div>
+    <div class="botones">
+        <button onclick="generarQR(), this.disabled=true">Generar QR</button>
+        <button onclick="location.href='index2.html'">Generar un nuevo QR</button>
+    </div>
+    <div style="text-align: center;" id="qr-code">
+        <!-- generacion de QR -->
+
+    </div>
+
+    
+</body>
+<script src="app.js"></script>
+</html>

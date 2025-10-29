@@ -1,0 +1,41 @@
+.tabla {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 2px hidden black;
+}
+
+.tabla td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.tabla td:first-child,
+.tabla td:nth-child(2) {
+    border-right: 2px solid black;
+}
+
+.tabla tr:first-child td,
+.tabla tr:nth-child(2) td {
+    border-bottom: 2px solid black;
+}
+
+.imagenes img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+body {
+    text-align: center;
+}
+
+#status {
+    font-size: 24px;
+    font-weight: bold;
+}

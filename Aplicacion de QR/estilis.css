@@ -1,0 +1,78 @@
+body {
+    background-color: #a4eaff; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; 
+    padding: 40px;
+    text-align: center;
+}
+
+.ingresarDatos {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 500px; 
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #0096c7;
+    box-shadow: 0 0 6px rgba(0,150,199,0.3);
+    outline: none;
+}
+
+.botones {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 15px 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #005f87;
+}
+
+#qr-code {
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+
+
