@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Usuarios</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/HF.css">
+    <link rel="stylesheet" href="/css/panel.css">
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <main class="panel-container">
+        
+        <div class="card-panel">
+            <div class="card-header">
+                <h2>Lista de Usuarios</h2>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Permisos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(user => { %>
+                        <tr>
+                            <td><%= user.id %></td>
+                            <td><%= user.nombre %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.permisos %></td>
+                            <td>
+                                <button class="btn btn-edit btn-editar"
+                                        data-id="<%= user.id %>"
+                                        data-nombre="<%= user.nombre %>"
+                                        data-email="<%= user.email %>"
+                                        data-permisos="<%= user.permisos %>">
+                                    Editar
+                                </button>
+                                
+                                <button class="btn btn-delete btn-eliminar"
+                                        data-id="<%= user.id %>">
+                                    Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-panel section-add">
+            <h2>Agregar Usuario</h2>
+            <p>Registra un nuevo usuario en el sistema</p>
+            <button id="añadir" class="btn btn-add">Añadir Usuario</button>
+        </div>
+
+    </main>
+
+
+    <div id="pop-up-editar" class="pop-up">
+        <div class="contenidoPop-Up">
+            <span class="cerrar">&times;</span> <h2>Editar Usuario</h2>
+            
+            <form action="/editar:id" method="post" id="formularioEditar" class="form-modal">
+                <div class="form-group">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo: </label>
+                    <input type="email" name="email" id="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contraseña">Contraseña: </label>
+                    <input type="password" name="contraseña" id="contraseña" class="form-input" placeholder="(Opcional)">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label for="permisos">Permisos: </label>
+                    <input type="checkbox" name="permisos" id="permisos">
+                </div>
+
+                <button type="submit" class="btn btn-save">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="pop-up-agregar" class="pop-up">
+        <div class="contenidoPop-Up">
+            <span class="cerrar">&times;</span> <h2>Agregar Usuarios</h2>
+            
+            <form action="/add" method="post" class="form-modal">
+                <div class="form-group">
+                    <label for="add_nombre">Nombre: </label>
+                    <input type="text" name="nombre" id="add_nombre" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="add_email">Correo: </label>
+                    <input type="email" name="email" id="add_email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="add_contraseña">Contraseña: </label>
+                    <input type="password" name="contraseña" id="add_contraseña" class="form-input">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label for="add_permisos">Permisos: </label>
+                    <input type="checkbox" name="permisos" id="add_permisos">
+                </div>
+
+                <button type="submit" class="btn btn-add-submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <button onclick="window.location.href='/logout'" class="btn-logout-fixed">Cerrar Sesión</button>
+
+    <%- include('partials/footer') %>
+
+</body>
+<script src="/js/main.js"></script>
+</html>

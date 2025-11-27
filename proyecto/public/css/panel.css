@@ -1,0 +1,127 @@
+/* --- public/css/panel.css --- */
+
+/* 1. CONTENEDOR PRINCIPAL */
+.panel-container {
+    max-width: 1000px;       /* Ancho máximo para que no se estire demasiado */
+    margin: 0 auto;          /* Centrar horizontalmente */
+    padding: 20px;
+    min-height: calc(100vh - 140px); /* Asegura que ocupe buen alto */
+}
+
+/* 2. ESTILO DE LAS TARJETAS (Los recuadros blancos) */
+.card-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    padding: 25px;
+    margin-bottom: 30px; /* Espacio entre la tabla y el cuadro de agregar */
+}
+
+.card-header h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 3. TABLA BONITA */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+.styled-table thead tr {
+    background-color: #009879; /* Un verde elegante para el encabezado */
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th, 
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Filas alternas grises */
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* 4. BOTONES GENÉRICOS */
+.btn {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+.btn:hover {
+    opacity: 0.85; /* Efecto al pasar el mouse */
+}
+
+/* 5. COLORES DE BOTONES ESPECÍFICOS */
+
+/* Editar: Amarillo */
+.btn-edit {
+    background-color: #ffc107; 
+    color: #333; /* Texto oscuro para que se lea bien en amarillo */
+}
+
+/* Eliminar: Rojo */
+.btn-delete {
+    background-color: #dc3545;
+}
+
+/* Añadir: Verde */
+.btn-add {
+    background-color: #28a745;
+    padding: 12px 20px; /* Un poco más grande */
+    font-size: 1rem;
+}
+
+/* 6. SECCIÓN AGREGAR USUARIO (Centrado) */
+.section-add {
+    text-align: center;
+}
+
+.section-add h2 {
+    margin-top: 0;
+    color: #444;
+}
+
+/* 7. BOTÓN SALIR (ESQUINA INFERIOR DERECHA) */
+.btn-logout-fixed {
+    position: fixed; /* Se pega a la pantalla */
+    bottom: 70px;    /* 70px desde abajo (para no tapar el footer de 50px) */
+    right: 20px;     /* 20px desde la derecha */
+    
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px; /* Bordes muy redondos */
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Sombra flotante */
+    z-index: 2000; /* Encima de todo */
+    transition: transform 0.2s;
+}
+
+.btn-logout-fixed:hover {
+    background-color: #c82333;
+    transform: scale(1.05); /* Crece un poquito al pasar el mouse */
+}

@@ -1,0 +1,88 @@
+/* --- public/css/login.css --- */
+
+/* 1. EL CONTENEDOR PRINCIPAL (En tu HTML se llama login-wrapper) */
+.login-wrapper {
+    background-color: #f0f2f5;
+    /* Calculamos la altura: Pantalla completa menos Header y Footer */
+    min-height: calc(100vh - 160px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 2. LA TARJETA (En tu HTML se llama login-card) */
+.login-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h1 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+/* 3. MENSAJE DE ERROR (Opcional, por si sale el mensaje) */
+.alert-error {
+    background-color: #ffe6e6;
+    color: #d8000c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ffb2b2;
+}
+
+/* 4. GRUPOS DE FORMULARIO (Este sí coincidía) */
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* 5. INPUTS (Este sí coincidía) */
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-size: 1rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+/* 6. BOTÓN (En tu HTML se llama btn-login) */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: #004494;
+}
